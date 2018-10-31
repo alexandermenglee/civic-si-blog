@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+
+<div>
+    <div class="ui huge header"><%= blog.Title %></div>
+    <div class="ui centered big image"><img src="<%= blog.Image %>" /></div>
+    <%= blog.created.toString(); %>
+    <p> <%= blog.Body %></p>
+    <!--  -->
+    <!-- EDIT BUTTON GOES HERE -->
+    <!--  -->
+    <a class="ui secondary button" href="/blogs/<%= blog._id %>/update">Edit</a>
+    <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+        <button class="ui red basic button">Delete</button>
+    </form>
+</div>
+
+<% include ./partials/footer %>

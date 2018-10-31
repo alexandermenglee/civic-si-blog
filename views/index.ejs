@@ -1,0 +1,16 @@
+<% include partials/header %>
+<div class="ui main text container">
+    <h1>CIVIC SI BLOG</h1>
+    <div class="ui grid">
+        <% blogs.forEach(function(blog){ %>
+        <div class="sixteen wide column">
+            <h2> <%= blog.Title %> </h2>
+            <img class="ui medium image" src="<%= blog.Image %>" alt="<%= blog.Title %>" />
+            <a href="/blogs/<%= blog._id %>">View More</a>
+        </div>
+        <p><%= blog.Body.substring(0, 25) + "..."; %></p>
+<% }); %>
+    </div>        
+</div>
+
+<% include partials/footer %>
